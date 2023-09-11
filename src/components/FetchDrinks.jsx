@@ -16,11 +16,11 @@ const FetchDrinks = () => {
     const fetchDrinks = async () => {
       try {
         const { data } = await axios.get(`${server}beers?page=2&per_page=24`);
-        console.log(data);
-        setLoading(false);
         setItems(data);
+        setLoading(false);  
       } catch (error) {
         setError(true);
+        setLoading(false)
       }
     };
     fetchDrinks();
